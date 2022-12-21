@@ -6,16 +6,17 @@
 #    By: meshahrv <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/05 11:58:02 by meshahrv          #+#    #+#              #
-#    Updated: 2022/12/16 18:00:19 by meshahrv         ###   ########.fr        #
+#    Updated: 2022/12/21 18:57:25 by meshahrv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-SRC_PATH	= libft/
-OBJ_PATH	= objs/
-GNL_PATH	= get_next_line/
-PRINTF_PATH = ft_printf/
+SRC_PATH		= libft/
+OBJ_PATH		= objs/
+GNL_PATH		= get_next_line/
+PRINTF_PATH 	= ft_printf/
+GB_COLLECT_PATH	= garbage_collector/
 
 SRC = ft_isalnum.c ft_isascii.c ft_isprint.c ft_strlen.c ft_isalpha.c ft_isdigit.c ft_memset.c \
 ft_bzero.c ft_memcpy.c ft_memmove.c ft_strlcpy.c ft_strlcat.c ft_toupper.c ft_tolower.c \
@@ -31,14 +32,18 @@ SRC_GNL = get_next_line_bonus.c\
 SRC_PRINTF = ft_printf.c \
 				printf_printnbrs.c \
 				printf_utils.c \
+
+SRC_GB_COLLECT = garbage_collector.c
 			
 SRCS		= $(addprefix $(SRC_PATH), $(SRC))
 GNL			= $(addprefix $(GNL_PATH), $(SRC_GNL))
 PRINTF		= $(addprefix $(PRINTF_PATH), $(SRC_PRINTF))
+GB_COLLECT	= $(addprefix $(GB_COLLECT_PATH), $(SRC_GB_COLLECT))
 OBJ			= $(SRC:.c=.o)
 OBJS_GNL 	= $(SRC_GNL:.c=.o)
 OBJS_PRINTF	= $(SRC_PRINTF:.c=.o)
-OBJS		= $(addprefix $(OBJ_PATH), $(OBJ) $(OBJS_GNL) $(OBJS_PRINTF))
+OBJS_GB		= $(SRC_GB_COLLECT:.c=.o)
+OBJS		= $(addprefix $(OBJ_PATH), $(OBJ) $(OBJS_GNL) $(OBJS_PRINTF) $(OBJS_GB))
 DEPS		= $(addprefix ${OBJ_PATH}, ${SRC:.c=.d})
 
 INCS	= -I./includes_libft/
@@ -65,6 +70,7 @@ $(NAME): $(OBJS)
 	@echo ${CYAN}${BOLD}LIBFT${NC} [${GREEN}OK${NC}] Compiling Objects : ${BOLD}LIBFT${NC}
 	@echo ${CYAN}${BOLD}LIBFT${NC} [${GREEN}OK${NC}] Compiling Objects : ${BOLD}GET NEXT LINE${NC}
 	@echo ${CYAN}${BOLD}LIBFT${NC} [${GREEN}OK${NC}] Compiling Objects : ${BOLD}FT_PRINTF${NC}
+	@echo ${CYAN}${BOLD}LIBFT${NC} [${GREEN}OK${NC}] Compiling Objects : ${BOLD}GARBAGE COLLECTOR${NC}
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 	@mkdir -p ${OBJ_PATH}
@@ -75,6 +81,10 @@ $(OBJ_PATH)%.o: $(GNL_PATH)%.c
 	@${CC} ${CFLAGS} ${INCS} -o $@ -c $<
 
 $(OBJ_PATH)%.o: $(PRINTF_PATH)%.c
+	@mkdir -p ${OBJ_PATH}
+	@${CC} ${CFLAGS} ${INCS} -o $@ -c $<
+
+$(OBJ_PATH)%.o: $(GB_COLLECT_PATH)%.c
 	@mkdir -p ${OBJ_PATH}
 	@${CC} ${CFLAGS} ${INCS} -o $@ -c $<
 
