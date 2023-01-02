@@ -6,7 +6,7 @@
 /*   By: meshahrv <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 12:18:21 by meshahrv          #+#    #+#             */
-/*   Updated: 2022/05/23 18:12:49 by meshahrv         ###   ########.fr       */
+/*   Updated: 2023/01/02 17:22:56 by meshahrv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@
 # include <unistd.h>
 # include <limits.h>
 
-int	ft_strlen(char *str);
+int	ft_printflen(char *str);
 int	ft_printf(const char *format, ...);
-int	ft_putchar(char c);
-int	ft_putstr(char *str);
+int	ft_printfchar(char c);
+int	ft_printfstr(char *str);
 int	ft_putptr(unsigned long int str);
 int	ft_putptr_base(unsigned long int nb, char *base);
 int	ft_putnbr_base(int nbr, char *base);

@@ -6,7 +6,7 @@
 /*   By: meshahrv <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 18:19:58 by meshahrv          #+#    #+#             */
-/*   Updated: 2022/12/16 17:25:14 by meshahrv         ###   ########.fr       */
+/*   Updated: 2023/01/02 17:21:41 by meshahrv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ int	check_format(char c, va_list ap)
 
 	count = 0;
 	if (c == 'c')
-		count = ft_putchar(va_arg(ap, int));
+		count = ft_printfchar(va_arg(ap, int));
 	else if (c == 's')
-		count = ft_putstr(va_arg(ap, char *));
+		count = ft_printfstr(va_arg(ap, char *));
 	else if (c == 'd' || c == 'i')
 		count = ft_putnbr_base(va_arg(ap, int), "0123456789");
 	else if (c == 'p')
@@ -32,7 +32,7 @@ int	check_format(char c, va_list ap)
 	else if (c == 'X')
 		count = ft_putptr_base(va_arg(ap, unsigned int), "0123456789ABCDEF");
 	else if (c == '%')
-		count = ft_putchar('%');
+		count = ft_printfchar('%');
 	return (count);
 }
 
@@ -53,7 +53,7 @@ int	ft_printf(const char *format, ...)
 			i++;
 		}
 		else
-			chr += ft_putchar(format[i]);
+			chr += ft_printfchar(format[i]);
 		i++;
 	}
 	va_end(ap);

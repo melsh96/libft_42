@@ -6,13 +6,13 @@
 /*   By: meshahrv <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 18:08:49 by meshahrv          #+#    #+#             */
-/*   Updated: 2022/12/16 17:09:40 by meshahrv         ###   ########.fr       */
+/*   Updated: 2023/01/02 17:22:27 by meshahrv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes_libft/ft_printf.h"
 
-int	ft_strlen(char *str)
+int	ft_printflen(char *str)
 {
 	int	len;
 
@@ -22,13 +22,13 @@ int	ft_strlen(char *str)
 	return (len);
 }
 
-int	ft_putchar(char c)
+int	ft_printfchar(char c)
 {
 	write(1, &c, 1);
 	return (1);
 }
 
-int	ft_putstr(char *str)
+int	ft_printfstr(char *str)
 {
 	int	i;
 
@@ -49,7 +49,7 @@ int	ft_putptr(unsigned long n)
 		return (write(1, "(nil)", 5));
 	else
 	{
-		i += ft_putstr("0x");
+		i += ft_printfstr("0x");
 		i += ft_putptr_base(n, "0123456789abcdef");
 	}
 	return (i);

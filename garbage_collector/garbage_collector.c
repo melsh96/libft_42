@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   garbage_collector.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: meshahrv <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 17:42:16 by meshahrv          #+#    #+#             */
-/*   Updated: 2022/12/21 18:56:43 by meshahrv         ###   ########.fr       */
+/*   Updated: 2023/01/02 17:18:47 by meshahrv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	*garbage_alloc(t_list **garb_list, int size)
 {
 	void	*alloc;
 
-	alloc = malloc(size);
+	alloc = ft_calloc(1, size);
 	if (!alloc)
 		return (NULL);
 	set_garb_lst(garb_list, alloc);
