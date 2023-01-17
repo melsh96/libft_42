@@ -6,7 +6,7 @@
 /*   By: meshahrv <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 09:45:58 by meshahrv          #+#    #+#             */
-/*   Updated: 2022/10/05 15:22:02 by meshahrv         ###   ########.fr       */
+/*   Updated: 2023/01/17 18:39:27 by meshahrv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_atoi(const char *str)
 {
 	int	i;
 	int	sign;
-	int	res;
+	long long int	res;
 
 	i = 0;
 	sign = 1;
