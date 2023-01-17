@@ -6,7 +6,7 @@
 /*   By: meshahrv <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 16:52:53 by meshahrv          #+#    #+#             */
-/*   Updated: 2022/12/23 17:01:04 by meshahrv         ###   ########.fr       */
+/*   Updated: 2023/01/17 18:52:32 by meshahrv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int		ft_isprint(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 int		ft_atoi(const char *str);
+int		ft_llatoi(const char *str);
 
 size_t	ft_strlen(const char *string);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);

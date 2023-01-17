@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_llatoi.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: meshahrv <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/06 09:45:58 by meshahrv          #+#    #+#             */
-/*   Updated: 2023/01/17 18:50:41 by meshahrv         ###   ########.fr       */
+/*   Created: 2023/01/17 18:50:57 by meshahrv          #+#    #+#             */
+/*   Updated: 2023/01/17 18:51:50 by meshahrv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes_libft/libft.h"
 
-int	ft_atoi(const char *str)
+int	ft_llatoi(const char *str)
 {
-	int	i;
-	int	sign;
-	int	res;
+	int				i;
+	int				sign;
+	long long int	res;
 
 	i = 0;
 	sign = 1;
