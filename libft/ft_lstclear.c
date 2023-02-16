@@ -6,7 +6,7 @@
 /*   By: meshahrv <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 17:37:07 by meshahrv          #+#    #+#             */
-/*   Updated: 2022/10/05 15:23:30 by meshahrv         ###   ########.fr       */
+/*   Updated: 2023/02/16 12:40:34 by meshahrv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,11 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	while (to_clear != NULL)
 	{
 		next = to_clear->next;
-		del(to_clear->content);
+		if (to_clear->content != NULL)
+		{
+			del(to_clear->content);
+			to_clear->content = NULL;
+		}
 		free(to_clear);
 		to_clear = next;
 	}
